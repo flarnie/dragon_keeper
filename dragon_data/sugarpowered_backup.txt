@@ -1,0 +1,168 @@
+---
+- name: Sugarpowered
+  element: sugar
+  scales:
+  - element: sugar
+    name: Cream puff
+  dragon: !ruby/object:DKClasses::Dragon
+    name: Cheesy
+    element: grilled-cheese
+    asleep: true
+    stuff_in_belly: 7
+    level: 0
+    points: 1
+    dragon_ascii:
+    - |2-
+                      _/(               <~\  /~>               )\_
+                    .~   ~-.            /^-~~-^\            .-~   ~.
+                 .-~        ~-._       : /~\/~\ :       _.-~        ~-.
+              .-~               ~~--.__: \0/\0/ ;__,--~~               ~-.
+             /                        ./\. ^^ ./\.                        \
+            .                         |  ( )( )  |                         .
+            -~~--.        _.---._    /~   U`'U   ~\    _.---._        .--~~-
+                  ~-. .--~       ~~-|              |-~~       ~--. .-~
+                     ~              |  :        :  |_             ~
+                                    `\,'  :  :  `./' ~~--._
+                                   .(<___.'  `,___>),--.___~~-.
+                                   ~ (((( ~--~ ))))      _.~  _)
+                                      ~~~      ~~~/.--~ _.--~
+    - "                         ^\\    ^                  \n                        /
+      \\  / \\                 \n                       /.  \\/   \\      |\\___/|
+      \  \n    *----*           / / |  \\    \\  __/  O  O\\   \n    |   /          /
+      \ /  |   \\    \\_\\/  \\     \\     \n   / /\\/         /   /   |    \\   _\\/
+      \   '@___@      \n  /  /         /    /    |     \\ _\\/       |U\n  |  |       /
+      \    /     |      \\\\/        |\n  \\  |     /_     /      |       \\  )   \\
+      _|_\n  \\   \\       ~-./_ _    |    .- ; (  \\_ _ _,\\'\n  ~    ~.           .-~-.|.-*
+      \     _        {-,\n   \\      ~-. _ .-~                 \\      /'\n    \\
+      \                  }            {   .*\n     ~.                 '-/        /.-~----.\n
+      \      ~- _             /        >..----.\\\\\\\n           ~ - - - - ^}_ _
+      _ _ _ _ _.-\\\\\\"
+    - "         ^                       ^\n         |\\   \\        /        /|\n
+      \       /  \\  |\\__  __/|       /  \\\n       / /\\ \\ \\ _ \\/ _ /      /
+      \   \\\n      / / /\\ \\ {*}\\/{*}      /  / \\ \\\n      | | | \\ \\( (00)
+      )     /  // |\\ \\\n      | | | |\\ \\(V\"\"V)\\    /  / | || \\| \n      |
+      | | | \\ |^--^| \\  /  / || || || \n     / / /  | |( WWWW__ \\/  /| || || ||\n
+      \   | | | | | |  \\______\\  / / || || || \n    | | | / | | )|______\\ ) | /
+      | || ||\n    / / /  / /  /______/   /| \\ \\ || ||\n   / / /  / /  /\\_____/
+      \ |/ /__\\ \\ \\ \\ \\\n   | | | / /  /\\______/    \\   \\__| \\ \\ \\\n   |
+      | | | | |\\______ __    \\_    \\__|_| \\\n   | | ,___ /\\______ _  _     \\_
+      \      \\  |\n   | |/    /\\_____  /    \\      \\__     \\ |    /\\\n   |/
+      |   |\\______ |      |        \\___  \\ |__/  \\\n   v  |   |\\______ |      |
+      \           \\___/     |\n      |   |\\______ |      |                    __/\n
+      \      \\   \\________\\_    _\\               ____/\n     __/   /\\_____ __/
+      \  /   )\\_,      _____/\n    /  ___/  \\uuuu/  ___/___)    \\______/\n    VVV
+      \ V        VVV  V "
+    - |2-
+
+
+                                                          .%,
+                                                         X:-x\',
+                                                        X:/%;::\:X
+                                                       X:l%  ; :'\:X
+                                                      X:l%   :  : '\:X
+                                                      X:l%   :   :  '\:X
+                                   b,      b,        X:/l%   :    :   \:X
+                                  JPQ,    JPQ,       X:l%    :     :   '\:X
+                                .dP'd|._,=dPQq\     X:l%'    :      :    '\:X
+                               xdP  #P"'_    _,:   .X:l%     :       :    '\:X
+                            .d/"p   '  'O \  'O:;  X:l%'     :       :      \:X
+                          ,pP' q.          \:  `#  X:ld       :       :      ':X
+                        ,d"   ,pq  .,-qx_,  "\  `Q:  l%       :       :       k:X
+                      ./'     Jp       .      `  ` 3  %       :        ;      k:X
+                     dP       p            p    `  `q         :        :      k:X
+                    d/       ; J,/";xpx"\: '*q    ` `\,       :         :     l:X.
+                   dP      ;'    dP      "\:_,`.q. /d b\      :         :      k:X
+                 .d'      ;    dP            .\_j '- u-'      :         :      k:X
+      X         ./'     ;'    /"            .'                :         ;      k:X
+      \X       .d'     ;    ,"             :      X:l%        :        :       k:X
+      :\X      d'     ;   ./'             :       X:/%        :        ;       k:X
+      ::lX    JP     ;    J              :      .X:/ %        :       :        k;X
+      k:lX    #'    :    j'             :    .X:/ %           :       :       d:lX
+      k:lX   |P    ;     |             :  .X:/ %              :       ;       k;lX
+      k:lX   ||    ;    |'            : X:/ %                 ;       :      d:;X'
+      k:lX   d|   ;     :l           :X:/ %'                 :        :      k:lX
+      k:iX   #|   ;     ||          X:/ %                    ;        ;      k:lX
+       k:\X  ||  ;       ||       X:/ %                     :        :       k:lX
+        k:\pQJb  ;        \N.PQ XX/ %                      ;         ;       k:lX
+         kJP.Ql\;          XQ. J Q J                      :         ;        k:lX
+         6Q : Q%           \Q  Q   J              ;''''':.:;''::.  :         k:lX
+        6QQ  : Ql           lQ'   J              ;        ;     ': :;''':.   k::X.
+       6QQQ )  Ql           i6    Q             ;                 .;     ':.  k:\X
+        6QQ   J l           \  6  Q            ;                            ':.k:X
+       9QQ   J  i            l 6   6          ;                                 k;
+    - |-
+      @@@@@@@@@@@@@@@@@@@@@**^^""~~~"^@@^*@*@@**@@@@@@@@@
+      @@@@@@@@@@@@@*^^'"~   , - ; ,@@b. '  -e@@@@@@@@@
+      @@@@@@@@*^"~      . '     . ' ,@@@@(  e@*@@@@@@@@@@
+      @@@@@^~         .       .   ' @@@@@@, ~^@@@@@@@@@@@
+      @@@~ ,e**@@*e,  ,e**e, .    ' '@@@@@@e,  "*@@@@@'^@
+      @',e@@@@@@@@@@ e@@@@@@       ' '*@@@@@@    @@@'   0
+      @@@@@@@@@@@@@@@@@@@@@',e,     ;  ~^*^'    ;^~   ' 0
+      @@@@@@@@@@@@@@@^""^@@e@@@   .'           ,'   .'  @
+      @@@@@@@@@@@@@@'    '@@@@@ '         ,  ,e'  .    ;@
+      @@@@@@@@@@@@@' ,&&,  ^@*'     ,  .  i^"@e, ,e@e  @@
+      @@@@@@@@@@@@' ,@@@@,          ;  ,& !,,@@@e@@@@ e@@
+      @@@@@,~*@@*' ,@@@@@@e,   ',   e^~^@,   ~'@@@@@@,@@@
+      @@@@@@, ~" ,e@@@@@@@@@*e*@*  ,@e  @@""@e,,@@@@@@@@@
+      @@@@@@@@ee@@@@@@@@@@@@@@@" ,e@' ,e@' e@@@@@@@@@@@@@
+      @@@@@@@@@@@@@@@@@@@@@@@@" ,@" ,e@@e,,@@@@@@@@@@@@@@
+      @@@@@@@@@@@@@@@@@@@@@@@~ ,@@@,,0@@@@@@@@@@@@@@@@@@@
+      @@@@@@@@@@@@@@@@@@@@@@@@,,@@@@@@@@@@@@@@@@@@@@@@@@@
+      """""""""""""""""""""""""""""""""""""""""""""""""""
+    encounters:
+    - A tricksy invisible hobbit is trying to steal your gems!
+    - A knight is here, claiming Cheesy has eaten the princess.
+    - Cheesy has become sad, because a small child stopped believing in them.
+    - A hoard of goblins are trying to imprison Cheesy!
+    - A rival dragon has appeared and wants to claim the cave.
+    - Bright light blinds you- it is a phoenix!
+    - A terrifying elephant encroaches!
+    - It's a Rodent Of Unusual Size!
+    - A fairy has appeared, offering to grant one wish.
+    levels:
+    - level: baby
+      desc: A winged, scaly reptile the size of a cat.
+    - level: young
+      desc: A cow-sized lizard with bat-like wings and sharp teeth.
+    - level: large
+      desc: A sprawling mess of scales, claws, and teeth with wings.
+    - level: full-grown
+      desc: "A majestic, sophisticated monster with intelligent eyes, \ndagger-like
+        claws, shining scales, and wings that can blot out the sun."
+    alt_elements:
+    - water
+    - fire
+    - wind
+    - amethyst
+    - iron
+    - gold
+    - emerald
+    - ruby
+    - grilled-cheese
+    - meatloaf
+    - silver
+    - cake
+    - rubix-cube
+    - glitter
+    - crystal
+    - smoke
+    - data
+    happy_greetings:
+    - pounces on you and licks your face.
+    - blinks at you in a thoughtful way.
+    - is happily crushing boulders in the back of the cave.
+    - nibbles playfully on your elbow.
+    - is putting the moves on a wandering iguana.
+    - tries to talk to you- it's breath smells like rotten eggs!
+    - is practicing flying.
+    - nuzzles you as you observe it.
+    - has brought you a dead mouse.
+    yuck_greetings:
+    - hacks up some brimstone.
+    - is panting unhappily.
+    - growls at you.
+    - smells worse than usual today!
+    - hisses at you.
+    - begins circling you like a shark.
+    - curls into a little ball of dragon and sighs.
+    - makes fun of your haircut.
