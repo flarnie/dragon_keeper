@@ -338,7 +338,7 @@ It has #{@element}-tinted scales and smells of sulfur."
         end
       end
       @stuff_in_belly = 0 if @stuff_in_belly < 0
-      puts "Hunger Hint: it's fullness = #{@stuff_in_belly}"
+      puts "Hunger Hint: its fullness = #{@stuff_in_belly}"
     end
 
     def feed

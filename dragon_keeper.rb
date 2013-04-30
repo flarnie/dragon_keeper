@@ -23,7 +23,7 @@ dragon_menu.add_option("Quit", (dragon_menu.length+1), Proc.new{ |player|
 players = Dir['dragon_data/*_save_file.yml']
 
 #get the default (most recent? alphabetical?) player
-if players.length > 0
+if !(players.empty?)
   def get_player_name(filename)
     player = /dragon_data\/([a-zA-Z\s]*)_save_file.yml/.match(filename).captures[0]
   end
