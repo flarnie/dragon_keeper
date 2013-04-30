@@ -1,9 +1,11 @@
+#Classes related to the Dragon Keeper Game
 module DKClasses
 require './dragon_data/TextOnlyUX'
 require 'yaml'
-
+  #The player methods and data.
   class Player
     attr_reader :name, :element, :scales, :dragon
+    #The Player object stores player's name, their chosen 'element', 'scale' inventory, the active dragon object, and config. option.
     def initialize(name = '', element = '', scales = [], dragon = nil, non_load=true)
       @name = name.length> 0 ? name : get_name()
       @element = element.length> 0 ? element : get_element()
@@ -11,7 +13,7 @@ require 'yaml'
       @dragon = dragon != nil ? Dragon.new(dragon.name, dragon.element, dragon.asleep, dragon.stuff_in_belly, dragon.level, dragon.points, non_load) : ''
       save_game if non_load
     end
-
+    #Augments dragon stats in a standard way and calls a method chosen from the 'dragon menu', adding a 'scale' to inventory if one is returned.
     def take_turn(lambda)
       @dragon.hunger_up
       lambda.call(self)
@@ -24,7 +26,7 @@ require 'yaml'
       end
       save_game
     end
-
+    #Saves the new player data, overwriting old save file.  Uses YAML.
     def save_game()
       object = [{"name"=>@name, "element"=>@element, "scales"=>@scales, "dragon"=>@dragon}]
       main_directory = Dir.getwd
@@ -35,11 +37,11 @@ require 'yaml'
       Dir.chdir(main_directory)
       puts "(Your game has been saved.)"
     end
-
+    #A little validator for alphabetical char.s and spaces.
     def alpha_check(string)
       /[^a-zA-Z\s]/.match(string)
     end
-
+    #Asks for a player's name.
     def get_name
       puts "What be ye name?"
       name = gets.chomp
@@ -51,7 +53,7 @@ require 'yaml'
       #add a check for uniqueness
       name
     end
-
+    #Asks for the player's 'element'.
     def get_element
       puts "What's your favorite element?"
       elem = gets.chomp.downcase
@@ -61,7 +63,7 @@ require 'yaml'
       end
       elem
     end
-
+    #Prints a list of 'scale' inventory.
     def see_scales
       if @scales.length > 0
         puts "You examine your scale collection:"
@@ -76,11 +78,11 @@ require 'yaml'
         any_key = gets.chomp
       end
     end
-
+    #Prints a character description.
     def to_s
       "You are #{@name} who favors #{@element}."
     end
-
+    #Runs through the text and options of a new game, and creates active Dragon object.
     def start_game
       5.times { puts "." }
       puts "You have traveled far and wide, searching for #{@element} and wonder."
@@ -120,7 +122,7 @@ require 'yaml'
         end
       end
     end
-
+    #Runs through 'end game' text, generates new active Dragon object.
     def restart_dragon
       5.times { puts "."}
       puts "#{@dragon.name} has left you a dragon egg.  It is hatching!"
@@ -152,9 +154,10 @@ require 'yaml'
       end
 
   end
-
+  #Stores data and methods for interacting with the Dragon.
   class Dragon
     attr_reader :name, :element, :asleep, :stuff_in_belly, :level, :points
+    #The Dragon class stores all data about the player's Dragon and about their game state, as well as ASCII art and text options for game.
     def initialize(name, element, asleep = false, stuff_in_belly = 8, level = 0, points = 0, non_load = true)
       @name = name.capitalize
       @element = element
@@ -295,7 +298,7 @@ dagger-like claws, shining scales, and wings that can blot out the sun."}]
       #show user their new dragon!
       description if non_load
     end
-
+    #Prints customized description of the Dragon.
     def description
       puts @dragon_ascii[@level]
       puts "#{@name} is a #{@levels[@level]['level']} dragon: #{@levels[@level]['desc']} 
@@ -303,7 +306,7 @@ It has #{@element}-tinted scales and smells of sulfur."
       puts "(press any key to continue)"
       any_key = gets.chomp
     end
-
+    #Prints status update based on hunger and sleep status.
     def status
       puts @asleep ? "As #{@name} snores, smoke rises from his nostrils." : "#{@name} prowls the cave, full of energy!"
       if !(@asleep)
@@ -325,7 +328,7 @@ It has #{@element}-tinted scales and smells of sulfur."
       puts "(press any key to continue)"
       any_key = gets.chomp
     end
-
+    #Decreases 'stuff_in_belly' and prints update.  50% chance of waking dragon.
     def hunger_up
       @stuff_in_belly -= rand(1..2) if @stuff_in_belly > 0
       if @asleep 
@@ -340,7 +343,7 @@ It has #{@element}-tinted scales and smells of sulfur."
       @stuff_in_belly = 0 if @stuff_in_belly < 0
       puts "Hunger Hint: its fullness = #{@stuff_in_belly}"
     end
-
+    #Increases 'stuff_in_belly' and prints update.  Also wakes dragon if asleep.
     def feed
       if @asleep
         puts "You have awakened a dragon.  What a brave soul!"
@@ -366,7 +369,7 @@ It has #{@element}-tinted scales and smells of sulfur."
         end
       end
     end
-
+    #Increases 'points', determining encounter frequency, and randomly puts Dragon to sleep.
     def point_up
       @points += 1 if (5..9).include?(@stuff_in_belly) && !(@asleep)
       if (1..2).include?(@points) && rand(1..2) == 2
@@ -378,7 +381,7 @@ It has #{@element}-tinted scales and smells of sulfur."
         encounter
       end
     end
-
+    #Prints text of an 'encounter', waking up dragon if asleep and leveling up the Dragon.
     def encounter
       puts "* - * - * - * - * - * - * - * - * - * - * - * - * - * - * - *"
       puts "         ENCOUNTER!~"
@@ -392,7 +395,7 @@ It has #{@element}-tinted scales and smells of sulfur."
       any_key = gets.chomp
       level_up
     end
-
+    #Increases Dragon level, prints message, and prints end-game text if level reaches 4.  Returns scale when game ends.
     def level_up
       if @level < 3
         @level += 1
@@ -413,15 +416,15 @@ It has #{@element}-tinted scales and smells of sulfur."
         scale = "scale"
       end
     end
-
+    #Returns a random element from init data.
     def rand_element
       @alt_elements[(rand(@alt_elements.length - 1))]
     end
 
   end
-
+  #Child class of Menu from TextOnlyUX; it has a dragon aesthetic.
   class DK_Menu < TextOnlyUX::Menu
-
+    #Displays menu with a dragon peeking over the top, fixed width.
     def display(player)
      quit = false
      #for this style inner menu width is fixed at 57

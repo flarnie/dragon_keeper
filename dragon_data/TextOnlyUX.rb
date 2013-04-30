@@ -1,8 +1,10 @@
-
+#Module of classes and methods used for creating a ASCII User Interface in the console.
 module TextOnlyUX
+#A menu of options, each linked to a block of code.
 class Menu
 	attr_reader :menu_name
 
+  #Creates the menu object with name, options, and callback.
 	def initialize(menu_name, options, do_after)
 		@menu_name = menu_name
 		@options = options
@@ -10,14 +12,15 @@ class Menu
 
 	end
 
+  #Returns the number of options in the menu.
 	def length()
 		@options.length
 	end
-
+  #Adds an option to the menu; a number for the user to input, and the block of code to run as a result.
 	def add_option(title, number, action)
 	    @options << { title:title, number:number, action:action }
 	end
-
+  #Displays the menu to a particular student/player object.  The student/player value is passed to each option Proc.
 	def display(student)
 		quit = false
 		#find longest option string
